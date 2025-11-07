@@ -7,7 +7,9 @@
  * @returns {string} - The formatted string.
  */
 function capitalizeWords(input) {
-    return input.replace(/\b\w/g, char => char.toUpperCase());
+  if (!input) return '';
+  // Only capitalize letters that follow a space or start of string
+  return input.replace(/(^|\s)\w/g, char => char.toUpperCase());
 }
 
 /**
@@ -16,7 +18,7 @@ function capitalizeWords(input) {
  * @returns {Array} - An array of active user objects.
  */
 function filterActiveUsers(users) {
-    return users.filter(user => user.isActive);
+    return users.filter(user => user.active);
 }
 
 /**
@@ -26,8 +28,8 @@ function filterActiveUsers(users) {
  * @returns {string} - The log message.
  */
 function logAction(action, username) {
-    const timestamp = new Date().toISOString();
-    return `User ${username} performed ${action} at ${timestamp}`;
+   if (!action || !username) return 'Invalid input';
+    return `User ${username} performed ${action}`;
 }
 
 module.exports = { capitalizeWords, filterActiveUsers, logAction };
