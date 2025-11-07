@@ -7,9 +7,9 @@
  * @returns {string} - The formatted string.
  */
 function capitalizeWords(input) {
-  if (!input) return '';
-  // Only capitalize letters that follow a space or start of string
-  return input.replace(/(^|\s)\w/g, char => char.toUpperCase());
+    if (!input) return '';
+    // Only capitalize letters that follow a space or start of string
+    return input.replace(/(^|\s)\w/g, char => char.toUpperCase());
 }
 
 /**
@@ -28,7 +28,7 @@ function filterActiveUsers(users) {
  * @returns {string} - The log message.
  */
 function logAction(action, username) {
-   if (!action || !username) return 'Invalid input';
+    if (!action || !username) return 'Invalid input';
     return `User ${username} performed ${action}`;
 }
 
