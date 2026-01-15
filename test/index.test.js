@@ -38,7 +38,6 @@ describe('filterActiveUsers', () => {
         ];
         expect(filterActiveUsers(users)).toEqual([]);
     });
-
     test('should return an empty array for an empty input array', () => {
         expect(filterActiveUsers([])).toEqual([]);
     });
